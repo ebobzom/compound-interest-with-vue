@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div id="main-app">
+        <h1>Compound Interest Calculator</h1>
+
+        <label for="principal">Enter Initial Principal</label>
+        <input id="principal" v-model.number='principal' type="number" placeholder="Enter Initial Principal">
+
+        <label for="rate">Enter the Rate</label>
+        <input id='rate' v-model.number='rate' type="number" placeholder="Enter the Rate">
+
+        <label for="time">Enter the Time Period</label>
+        <input id="time" v-model.number='time' type="number" placeholder="Enter the duration in years">
+
+        <label for="number-of-time">Enter the number of time</label>
+        <input id="number-of-time" v-model.number='numberOfTime' type="number" placeholder="Enter the number of time">
+
+        <p>Compound Interset is: {{ principal && time && rate && numberOfTime ? principal * ( (1 + (rate / numberOfTime)) ** (numberOfTime * time) ) : null }}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
